@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Reveal Example</title>
+    <style>
+        #secretElement {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reveal Secret Element</h1>
+    
+    <form id="codeForm">
+        <label for="codeInput">Enter code:</label>
+        <input type="text" id="codeInput" name="code" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div id="secretElement">
+        <a href="/reprorters/HK341Q5CPE121NKP38WE7MJHO7ANVCP3" style="color:green">Ssh</a>
+    </div>
+
+    <script>
+        document.getElementById('codeForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            var codeInput = document.getElementById('codeInput').value;
+            var secretElement = document.getElementById('secretElement');
+            var correctCode = '9999999999'; // Replace with your desired code
+
+            if (codeInput === correctCode) {
+                secretElement.style.display = 'block';
+            } else {
+                alert('Incorrect code. Please try again.');
+                secretElement.style.display = 'none'; // Hide element if code is incorrect
+            }
+        });
+    </script>
+</body>
+</html>
